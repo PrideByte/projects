@@ -336,7 +336,7 @@ input[type="submit"]:focus {
 
 //******Hero******
 .hero {
-  position: fixed;
+  position: relative;
   width: 100%;
   padding: $base * 10 0;
   top: 0;
@@ -367,6 +367,7 @@ input[type="submit"]:focus {
 
       @media screen and (max-width: $size-850) {
         position: absolute;
+        pointer-events: none;
         top: 0;
         right: $base * 12;
       }
@@ -420,6 +421,10 @@ input[type="submit"]:focus {
     }
 
     &-active {
+      .hero__nav-wrapper {
+        pointer-events: initial;
+      }
+
       .hero__menu-wrapper {
         transform: translateX(0);
       }
@@ -497,8 +502,7 @@ input[type="submit"]:focus {
       transition: color 0.2s ease;
 
       &:hover,
-      &:active,
-      &:focus {
+      &:active {
         color: $clr-red-200;
       }
 
